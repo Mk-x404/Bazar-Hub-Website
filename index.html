@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BazaarHub | Premium Experience</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Outfit:wght@100..900&family=Syne:wght@400..800&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="bg-black text-white hide-scrollbar">
+    <!-- Custom Cursor -->
+    <div class="cursor-outer"></div>
+    <div class="cursor-inner"></div>
+
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-bar-wrap">
+            <div class="preloader-bar"></div>
+        </div>
+        <p class="preloader-text">INITIALIZING BAZARHUB EXCELLENCE (0%)</p>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-links">
+                <a href="#tech">TECH</a>
+                <a href="#gadgets">GADGETS</a>
+                <a href="#health">HEALTH</a>
+                <a href="#kitchen">KITCHEN</a>
+                <a href="#bottles">BOTTLES</a>
+                <a href="#about">ABOUT</a>
+                <a href="#faq">FAQ</a>
+                <a href="#support">SUPPORT</a>
+            </div>
+            <div class="nav-icons">
+                <i data-lucide="search"></i>
+                <a href="cart.html" class="cart-icon">
+                    <i data-lucide="shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Product Modal -->
+    <div id="product-modal" class="modal">
+        <div class="modal-content">
+            <button id="modal-close" class="modal-close">
+                <i data-lucide="x"></i>
+            </button>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img id="modal-img" src="" alt="">
+                </div>
+                <div class="modal-details">
+                    <p id="modal-cat" class="modal-cat"></p>
+                    <h2 id="modal-name" class="modal-name"></h2>
+                    <p id="modal-price" class="modal-price"></p>
+                    <p id="modal-desc" class="modal-desc"></p>
+                    <div class="modal-footer">
+                        <button class="btn-primary btn-modal-cart">ADD TO CART</button>
+                        <div class="modal-features">
+                            <div class="m-feat">
+                                <i data-lucide="truck"></i>
+                                <span>Free Shipping</span>
+                            </div>
+                            <div class="m-feat">
+                                <i data-lucide="shield-check"></i>
+                                <span>Warranty</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Smooth Scroll Wrap -->
+    <div id="smooth-wrapper">
+        <div id="smooth-content">
+
+            <!-- Scrollytelling Sequence -->
+            <section class="scrolly-section">
+                <div class="canvas-container sticky">
+                    <canvas id="scrolly-canvas"></canvas>
+                    <div class="scrolly-vignette"></div>
+
+                    <!-- Story Overlays -->
+                    <div class="story-overlays">
+                        <div class="story-step" data-step="1">
+                            <h1>BAZAARHUB.</h1>
+                            <p>Innovation Meets Everyday Living.</p>
+                        </div>
+                        <div class="story-step" data-step="2">
+                            <h2>TECH. GADGETS. ESSENTIALS.</h2>
+                            <p>Meticulously curated for the elite.</p>
+                        </div>
+                        <div class="story-step" data-step="3">
+                            <h2 class="text-right">DESIGNED FOR MODERN LIFESTYLES.</h2>
+                            <p class="text-right">Premium quality. Smart pricing.</p>
+                        </div>
+                        <div class="story-step" data-step="4">
+                            <h2>UPGRADE YOUR EVERYDAY.</h2>
+                            <button class="btn-explore" id="btn-explore">EXPLORE NOW</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Cinematic Hero -->
+            <section class="cinematic-hero">
+                <div class="hero-bg-visuals">
+                    <div class="hero-glow"></div>
+                </div>
+                <div class="hero-content">
+                    <div class="hero-logo-wrap" id="hero-logo-wrap">
+                        <img src="assets/logo.png" alt="Logo" class="hero-logo">
+                    </div>
+                    <div class="hero-text">
+                        <h2 class="hero-title">UNFOLD THE FUTURE</h2>
+                        <p class="hero-subtitle">The Evolution of Retail.</p>
+                    </div>
+                </div>
+                <div class="scroll-prompt">
+                    <div class="scroll-indicator">
+                        <div class="scroll-dot"></div>
+                    </div>
+                    <span class="scroll-label">Initiate Sequence</span>
+                </div>
+            </section>
+
+            <!-- Marketplace Entry -->
+            <div id="shop-start"></div>
+
+            <!-- Category Grid -->
+            <section class="categories py-large">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="title-xl">SHOP BY CATEGORY</h2>
+                        <p class="subtitle-md">Select a category to explore our premium collection.</p>
+                    </div>
+                    <div class="category-grid">
+                        <a href="#tech" class="cat-card cat-tall">
+                            <img src="assets/products/vacuum.jpeg" alt="Tech">
+                            <div class="cat-info">
+                                <h3>TECH</h3>
+                                <p>Explore Advanced Computing</p>
+                            </div>
+                        </a>
+                        <a href="#gadgets" class="cat-card cat-wide">
+                            <img src="assets/products/airpods.jpeg" alt="Gadgets">
+                            <div class="cat-info">
+                                <h3>GADGETS</h3>
+                                <p>Portable Excellence</p>
+                            </div>
+                        </a>
+                        <a href="#health" class="cat-card">
+                            <img src="assets/products/hair-dryer.jpeg" alt="Health">
+                            <div class="cat-info">
+                                <h3>HEALTH</h3>
+                                <p>Premium Wellness</p>
+                            </div>
+                        </a>
+                        <a href="#kitchen" class="cat-card">
+                            <img src="assets/products/juicer.jpeg" alt="Kitchen">
+                            <div class="cat-info">
+                                <h3>KITCHEN</h3>
+                                <p>Smart Appliances</p>
+                            </div>
+                        </a>
+                        <a href="#bottles" class="cat-card">
+                            <img src="assets/products/stanley-bottle.jpeg" alt="Bottles">
+                            <div class="cat-info">
+                                <h3>BOTTLES</h3>
+                                <p>Pure Hydration</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Products -->
+            <section id="tech" class="products py-large">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="title-xl italic">TECH EXCELLENCE</h2>
+                    </div>
+                    <div class="product-grid" id="product-grid-tech">
+                        <!-- Filtered products will go here or just keep main grid for now -->
+                    </div>
+                </div>
+            </section>
+
+            <section id="gadgets" class="products py-large">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="title-xl italic">GADGETS</h2>
+                    </div>
+                    <div class="product-grid" id="product-grid-gadgets"></div>
+                </div>
+            </section>
+
+            <section id="health" class="products py-large">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="title-xl italic">HEALTH & BEAUTY</h2>
+                    </div>
+                    <div class="product-grid" id="product-grid-health"></div>
+                </div>
+            </section>
+
+            <section id="kitchen" class="products py-large">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="title-xl italic">KITCHEN APPLIANCES</h2>
+                    </div>
+                    <div class="product-grid" id="product-grid-kitchen"></div>
+                </div>
+            </section>
+
+            <section id="bottles" class="products py-large">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="title-xl italic">WATER BOTTLES</h2>
+                    </div>
+                    <div class="product-grid" id="product-grid-bottles"></div>
+                </div>
+            </section>
+
+            <!-- All Products Grid (Backup) -->
+            <section class="products py-large" style="display:none">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="title-xl italic">CURATED EXCELLENCE</h2>
+                    </div>
+                    <div class="product-grid" id="product-grid">
+                        <!-- Dynamic Products Injection -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Brand CTA -->
+            <section class="final-cta py-xl text-center">
+                <h2 class="title-xxl">READY TO BEGIN?</h2>
+                <p class="subtitle-lg">Step into the future of lifestyle and technology.</p>
+                <button class="btn-primary mt-medium">SHOP ALL PRODUCTS</button>
+            </section>
+
+            <!-- About Us Section -->
+            <section id="about" class="about-section py-large">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="title-xl italic">OUR MISSION</h2>
+                        <p class="subtitle-md">Pakistan’s Trusted Online Shopping Store</p>
+                    </div>
+                    <div class="about-grid">
+                        <div class="about-text">
+                            <p class="text-lead">At BazaarHub, our mission is simple: to provide high-quality products
+                                at affordable prices with fast delivery and reliable customer support.</p>
+                            <p>We are passionate about bringing the latest gadgets, tech accessories, everyday
+                                essentials, and lifestyle products to your doorstep — no matter where you are in
+                                Pakistan.</p>
+                        </div>
+                        <div class="about-features">
+                            <div class="feature-item">
+                                <i data-lucide="check-circle"></i>
+                                <span>Premium quality products</span>
+                            </div>
+                            <div class="feature-item">
+                                <i data-lucide="truck"></i>
+                                <span>Fast nationwide delivery</span>
+                            </div>
+                            <div class="feature-item">
+                                <i data-lucide="shield-check"></i>
+                                <span>Safe Cash on Delivery</span>
+                            </div>
+                            <div class="feature-item">
+                                <i data-lucide="headset"></i>
+                                <span>Responsive customer support</span>
+                            </div>
+                            <div class="feature-item">
+                                <i data-lucide="lock"></i>
+                                <span>Secure shopping experience</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ Section -->
+            <section id="faq" class="faq-section py-large">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="title-xl">FAQ</h2>
+                        <p class="subtitle-md">Frequently Asked Questions</p>
+                    </div>
+                    <div class="faq-accordion">
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>1. How can I place an order?</span>
+                                <i data-lucide="chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Select your desired product → Click “Add to Cart” → Checkout → Enter your details →
+                                    Place order.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>2. Do you offer Cash on Delivery?</span>
+                                <i data-lucide="chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Yes, COD is available across Pakistan.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>3. How long does delivery take?</span>
+                                <i data-lucide="chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Major cities: 2–4 days | Other areas: 4–7 days</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>4. How do I track my order?</span>
+                                <i data-lucide="chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>You will receive tracking details via SMS or WhatsApp once the order is dispatched.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>5. Do you sell original and quality products?</span>
+                                <i data-lucide="chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Yes, we carefully check every product before shipping to ensure top quality.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Customer Support Section -->
+            <section id="support" class="support-section py-large bg-zinc-950">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="title-xl italic">WE'RE HERE TO HELP</h2>
+                        <p class="subtitle-md">Fast, friendly, and reliable service.</p>
+                    </div>
+                    <div class="support-grid">
+                        <div class="support-info">
+                            <h3>Contact Methods</h3>
+                            <div class="contact-card">
+                                <div class="contact-item">
+                                    <i data-lucide="phone"></i>
+                                    <div>
+                                        <strong>WhatsApp Support</strong>
+                                        <p>+923366776111</p>
+                                    </div>
+                                </div>
+                                <div class="contact-item">
+                                    <i data-lucide="mail"></i>
+                                    <div>
+                                        <strong>Email</strong>
+                                        <p>bazaarhub938@gmail.com</p>
+                                    </div>
+                                </div>
+                                <div class="contact-item">
+                                    <i data-lucide="clock"></i>
+                                    <div>
+                                        <strong>Response Time</strong>
+                                        <p>Within 1–6 hours</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="support-hours">
+                            <h3>Support Hours</h3>
+                            <p class="hours-text">Monday – Saturday<br>10:00 AM – 08:00 PM</p>
+                            <div class="support-services">
+                                <h3>Support Services</h3>
+                                <ul class="services-list">
+                                    <li>Order tracking</li>
+                                    <li>Returns & exchanges</li>
+                                    <li>Product guidance</li>
+                                    <li>Payment queries</li>
+                                    <li>Complaint resolution</li>
+                                    <li>Warranty support</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="footer">
+                <div class="container footer-grid">
+                    <div class="footer-brand">
+                        <div class="logo-lux">
+                            <span class="badge"></span>
+                            BAZARHUB
+                        </div>
+                        <div class="payment-methods">
+                            <p>Payment Methods</p>
+                            <span>HBL</span> <span>JazzCash</span> <span>EasyPaisa</span> <span>COD</span>
+                        </div>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Quick Links</h4>
+                        <a href="#tech">Tech</a>
+                        <a href="#gadgets">Gadgets</a>
+                        <a href="#health">Health</a>
+                        <a href="#kitchen">Kitchen</a>
+                        <a href="#bottles">Bottles</a>
+                    </div>
+                    <div class="footer-contact">
+                        <h4>Contact Us</h4>
+                        <p>bazaarhub938@gmail.com</p>
+                        <p>+923366776111</p>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>© 2025 BAZARHUB – ALL RIGHTS RESERVED.</p>
+                    <p>Developed by <a href="https://github.com/Mk-x404">Muhib Khan</a></p>
+                </div>
+            </footer>
+
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>

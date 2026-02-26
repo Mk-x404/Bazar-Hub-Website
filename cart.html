@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart | BazaarHub</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Outfit:wght@100..900&family=Syne:wght@400..800&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/lucide@latest"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <style>
+        .cart-page {
+            padding-top: 140px;
+            min-height: 100vh;
+        }
+
+        .cart-title {
+            font-family: var(--font-elegant);
+            font-size: 48px;
+            margin-bottom: 40px;
+        }
+
+        .cart-container {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 40px;
+        }
+
+        .cart-items {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .cart-item {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(12px);
+            border-radius: 24px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .cart-item img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        .cart-item-info {
+            flex: 1;
+        }
+
+        .cart-item-info h4 {
+            font-family: var(--font-heading);
+            font-size: 18px;
+            margin-bottom: 4px;
+        }
+
+        .cart-item-info p {
+            color: var(--accent);
+            font-weight: 900;
+        }
+
+        .cart-item-controls {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .btn-qty {
+            background: none;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-qty:hover {
+            background: var(--accent);
+            color: black;
+            border-color: var(--accent);
+        }
+
+        .btn-remove {
+            background: none;
+            border: none;
+            color: #ff4444;
+            cursor: pointer;
+            margin-left: 20px;
+        }
+
+        .cart-summary {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 32px;
+            padding: 32px;
+            height: fit-content;
+        }
+
+        .summary-title {
+            font-family: var(--font-heading);
+            font-size: 24px;
+            margin-bottom: 24px;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 16px;
+            color: var(--zinc-400);
+            font-size: 14px;
+        }
+
+        .summary-total {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 16px;
+            margin-top: 16px;
+            font-weight: 900;
+            color: white;
+            font-size: 18px;
+        }
+
+        .btn-checkout {
+            width: 100%;
+            padding: 18px;
+            border-radius: 16px;
+            border: none;
+            background: white;
+            color: black;
+            font-weight: 900;
+            font-size: 14px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 32px;
+            letter-spacing: 0.2em;
+        }
+
+        .btn-checkout:hover {
+            background: var(--accent);
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+
+<body class="hide-scrollbar">
+    <div class="preloader">
+        <div class="preloader-bar-wrap">
+            <div class="preloader-bar" style="width: 100%"></div>
+        </div>
+        <p class="preloader-text">LOADING...</p>
+    </div>
+    <div class="cursor-outer"></div>
+    <div class="cursor-inner"></div>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-links">
+                <a href="index.html#tech">TECH</a>
+                <a href="index.html#gadgets">GADGETS</a>
+                <a href="index.html#beauty">BEAUTY</a>
+                <a href="index.html#bottles">BOTTLES</a>
+                <a href="index.html#kitchen">KITCHEN</a>
+            </div>
+            <div class="nav-icons">
+                <a href="cart.html" class="cart-icon">
+                    <i data-lucide="shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container cart-page">
+        <h1 class="cart-title">YOUR BASKET</h1>
+        <div class="cart-container">
+            <div id="cart-items-list" class="cart-items">
+                <!-- Items will be injected here -->
+            </div>
+            <div class="cart-summary">
+                <h3 class="summary-title">Summary</h3>
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span id="subtotal">$0</span>
+                </div>
+                <div class="summary-row">
+                    <span>Shipping</span>
+                    <span>Calculated at checkout</span>
+                </div>
+                <div class="summary-total">
+                    <span>Total</span>
+                    <span id="grand-total">$0</span>
+                </div>
+                <button class="btn-checkout" onclick="location.href='checkout.html'">PROCEED TO CHECKOUT</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/app.js"></script>
+    <script>
+        // Specific logic for cart page
+        document.addEventListener('DOMContentLoaded', () => {
+            renderCartPage();
+        });
+
+        function renderCartPage() {
+            const container = document.getElementById('cart-items-list');
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            if (cart.length === 0) {
+                container.innerHTML = '<p class="text-zinc-500">Your cart is empty.</p>';
+                updateSummary(0);
+                return;
+            }
+
+            container.innerHTML = '';
+            let total = 0;
+
+            cart.forEach((item, index) => {
+                total += item.price * (item.quantity || 1);
+                const div = document.createElement('div');
+                div.className = 'cart-item';
+                div.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}">
+                    <div class="cart-item-info">
+                        <h4>${item.name}</h4>
+                        <p>$${item.price}</p>
+                    </div>
+                    <div class="cart-item-controls">
+                        <button class="btn-qty" onclick="changeQty(${index}, -1)">-</button>
+                        <span>${item.quantity || 1}</span>
+                        <button class="btn-qty" onclick="changeQty(${index}, 1)">+</button>
+                    </div>
+                    <button class="btn-remove" onclick="removeFromCart(${index})">
+                        <i data-lucide="trash-2"></i>
+                    </button>
+                `;
+                container.appendChild(div);
+            });
+
+            lucide.createIcons();
+            updateSummary(total);
+        }
+
+        function changeQty(index, delta) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart[index].quantity = (cart[index].quantity || 1) + delta;
+            if (cart[index].quantity < 1) cart[index].quantity = 1;
+            localStorage.setItem('cart', JSON.stringify(cart));
+            renderCartPage();
+        }
+
+        function removeFromCart(index) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.splice(index, 1);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            renderCartPage();
+            // Update counts on navbar
+            if (typeof updateCartUI === 'function') updateCartUI();
+        }
+
+        function updateSummary(total) {
+            document.getElementById('subtotal').textContent = `$${total}`;
+            document.getElementById('grand-total').textContent = `$${total}`;
+        }
+    </script>
+</body>
+
+</html>
