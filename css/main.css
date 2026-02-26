@@ -11,7 +11,9 @@
     --font-poppins: 'Poppins', sans-serif;
     --glass-bg: rgba(255, 255, 255, 0.03);
     --glass-border: rgba(255, 255, 255, 0.08);
+    --font-nav: 'DM Sans', sans-serif;
 }
+
 
 * {
     margin: 0;
@@ -133,14 +135,29 @@ body {
     background: rgba(5, 5, 5, 0.8);
 }
 
+.nav-brand {
+    display: flex;
+    align-items: center;
+    min-width: 160px;
+    height: 48px;
+    /* force the container to have height */
+}
+
+.nav-logo-img {
+    width: 120px !important;
+    height: 120px !important;
+    object-fit: contain !important;
+    filter: brightness(0) invert(1);
+    display: block !important;
+}
+
 .nav-container {
-    max-width: 1440px;
-    margin: 0 auto;
-    padding: 0 40px;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
+
 
 .nav-logo {
     display: flex;
@@ -177,10 +194,10 @@ body {
 .nav-links a {
     text-decoration: none;
     color: var(--white);
-    font-size: 9px;
-    font-weight: 800;
-    letter-spacing: 0.2em;
-    font-family: var(--font-elegant);
+    font-weight: 400;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    font-family: 'Archivo Black', sans-serif;
     opacity: 0.6;
     transition: all 0.3s;
     padding: 8px 12px;

@@ -6,8 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkout | BazaarHub</title>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Outfit:wght@100..900&family=Syne:wght@400..800&family=Poppins:wght@300;400;500;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bangers&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Instrument+Serif:ital@0;1&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Nastaliq+Urdu:wght@400..700&family=Playwrite+NZ+Basic+Guides&display=swap"
         rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/lucide@latest"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -83,6 +85,52 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 20px;
+            margin-bottom: 32px;
+        }
+
+        .pay-opt {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 20px 16px;
+            cursor: pointer;
+            text-align: center;
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .pay-opt i {
+            margin-bottom: 0;
+            width: 28px;
+            height: 28px;
+            color: var(--accent);
+        }
+
+        .pay-opt div {
+            font-size: 11px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--zinc-400);
+        }
+
+        .pay-opt.active div {
+            color: var(--white);
+        }
+
+        .pay-opt.active i {
+            color: var(--accent);
+            filter: drop-shadow(0 0 8px var(--accent));
+        }
+
+        .payment-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
             margin-bottom: 32px;
         }
 
@@ -203,29 +251,26 @@
                     <div class="payment-options">
                         <div class="pay-opt active"
                             onclick="this.parentElement.querySelectorAll('.pay-opt').forEach(el=>el.classList.remove('active')); this.classList.add('active')">
-                            <i data-lucide="credit-card"></i>
-                            <div>Credit Card</div>
+                            <i data-lucide="banknote"></i>
+                            <div>Cash on Delivery</div>
+                        </div>
+                        <div class="pay-opt"
+                            onclick="this.parentElement.querySelectorAll('.pay-opt').forEach(el=>el.classList.remove('active')); this.classList.add('active')">
+                            <i data-lucide="smartphone"></i>
+                            <div>JazzCash</div>
                         </div>
                         <div class="pay-opt"
                             onclick="this.parentElement.querySelectorAll('.pay-opt').forEach(el=>el.classList.remove('active')); this.classList.add('active')">
                             <i data-lucide="wallet"></i>
-                            <div>PayPal</div>
+                            <div>EasyPaisa</div>
+                        </div>
+                        <div class="pay-opt"
+                            onclick="this.parentElement.querySelectorAll('.pay-opt').forEach(el=>el.classList.remove('active')); this.classList.add('active')">
+                            <i data-lucide="building-2"></i>
+                            <div>HBL Bank</div>
                         </div>
                     </div>
-                    <div class="input-group">
-                        <label>Card Number</label>
-                        <input type="text" placeholder="0000 0000 0000 0000">
-                    </div>
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                        <div class="input-group">
-                            <label>Expiry Date</label>
-                            <input type="text" placeholder="MM/YY">
-                        </div>
-                        <div class="input-group">
-                            <label>CVC</label>
-                            <input type="text" placeholder="123">
-                        </div>
-                    </div>
+
                 </div>
             </div>
 
@@ -246,7 +291,26 @@
         </div>
     </main>
 
-    <script src="js/app.js"></script>
+    <script>
+        // Dismiss preloader immediately
+        window.addEventListener('load', () => {
+            const preloader = document.querySelector('.preloader');
+            preloader.style.transition = 'opacity 0.5s ease';
+            preloader.style.opacity = '0';
+            setTimeout(() => preloader.style.display = 'none', 500);
+        });
+
+        // Cursor
+        const cursorOuter = document.querySelector('.cursor-outer');
+        const cursorInner = document.querySelector('.cursor-inner');
+        window.addEventListener('mousemove', (e) => {
+            cursorOuter.style.left = e.clientX + 'px';
+            cursorOuter.style.top = e.clientY + 'px';
+            cursorInner.style.left = e.clientX + 'px';
+            cursorInner.style.top = e.clientY + 'px';
+        });
+    </script>
+
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const cart = JSON.parse(localStorage.getItem('cart')) || [];
