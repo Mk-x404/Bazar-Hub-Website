@@ -1216,3 +1216,289 @@ body {
     margin-bottom: 24px;
     font-family: var(--font-poppins);
 }
+
+/* ================================
+   MOBILE RESPONSIVE — ALL PAGES
+   ================================ */
+
+@media (max-width: 768px) {
+
+    /* Container */
+    .container {
+        padding: 0 20px;
+    }
+
+    /* Navbar */
+    .navbar {
+        top: 10px;
+        width: calc(100% - 24px);
+        height: 56px;
+        padding: 0 16px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .nav-brand .nav-logo-img {
+        width: 80px;
+        height: auto;
+    }
+
+    .nav-icons {
+        gap: 16px;
+    }
+
+    /* Hero */
+    .hero-title {
+        font-size: 14vw;
+    }
+
+    .hero-subtitle {
+        font-size: 10px;
+        letter-spacing: 0.3em;
+    }
+
+    .hero-logo {
+        width: 180px;
+    }
+
+    /* Story Steps */
+    .story-step h1,
+    .story-step h2 {
+        font-size: 12vw;
+    }
+
+    .story-step p {
+        font-size: 14px;
+    }
+
+    .btn-explore {
+        padding: 16px 40px;
+        font-size: 14px;
+    }
+
+    /* Titles */
+    .title-xl {
+        font-size: 36px;
+    }
+
+    .title-xxl {
+        font-size: 48px;
+    }
+
+    .subtitle-md {
+        font-size: 12px;
+    }
+
+    .subtitle-lg {
+        font-size: 16px;
+    }
+
+    /* Category Grid */
+    .category-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .cat-card {
+        height: 240px;
+    }
+
+    .cat-wide {
+        grid-column: span 1;
+    }
+
+    .cat-info h3 {
+        font-size: 24px;
+    }
+
+    /* Product Grid */
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+    .p-name {
+        font-size: 14px;
+    }
+
+    .p-price {
+        font-size: 14px;
+    }
+
+    /* Section Padding */
+    .py-large {
+        padding: 60px 0;
+    }
+
+    .py-xl {
+        padding: 80px 0;
+    }
+
+    .section-header {
+        margin-bottom: 32px;
+    }
+
+    /* Final CTA */
+    .final-cta .btn-primary {
+        padding: 16px 40px;
+        font-size: 14px;
+    }
+
+    /* About */
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        margin-top: 32px;
+    }
+
+    .text-lead {
+        font-size: 20px;
+    }
+
+    /* FAQ */
+    .faq-accordion {
+        margin-top: 32px;
+    }
+
+    .faq-question span {
+        font-size: 15px;
+    }
+
+    /* Support */
+    .support-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        margin-top: 32px;
+    }
+
+    .hours-text {
+        font-size: 20px;
+    }
+
+    .services-list {
+        grid-template-columns: 1fr;
+    }
+
+    /* Footer */
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+    }
+
+    .footer-bottom {
+        margin-top: 48px;
+        font-size: 9px;
+    }
+
+    /* Modal */
+    .modal-body {
+        grid-template-columns: 1fr;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+
+    .modal-details {
+        padding: 24px;
+    }
+
+    .modal-name {
+        font-size: 28px;
+    }
+
+    /* Cart Page */
+    .cart-container {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .cart-title {
+        font-size: 32px;
+        margin-bottom: 24px;
+    }
+
+    .cart-item img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .cart-item-info h4 {
+        font-size: 14px;
+    }
+
+    .cart-page {
+        padding-top: 100px;
+    }
+
+    /* Checkout Page */
+    .checkout-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .checkout-title {
+        font-size: 32px;
+        margin-bottom: 24px;
+    }
+
+    .checkout-page {
+        padding-top: 100px;
+    }
+
+    .form-section {
+        padding: 24px;
+    }
+
+    .payment-options {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    .pay-opt {
+        padding: 16px 10px;
+    }
+
+    .pay-opt i {
+        width: 22px;
+        height: 22px;
+    }
+
+    .btn-pay {
+        padding: 18px;
+        font-size: 14px;
+    }
+
+    .order-summary {
+        padding: 24px;
+    }
+}
+
+/* Extra small phones */
+@media (max-width: 400px) {
+
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .title-xl {
+        font-size: 28px;
+    }
+
+    .title-xxl {
+        font-size: 36px;
+    }
+
+    .story-step h1,
+    .story-step h2 {
+        font-size: 10vw;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cart-item {
+        flex-wrap: wrap;
+    }
+}
